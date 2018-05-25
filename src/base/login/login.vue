@@ -21,12 +21,13 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary" style="width:100%;margin-bottom:30px;" @click="userLogin">登录</el-button>
+      <el-button type="primary" style="width:100%;margin-bottom:30px;" @click="userLoginBtn">登录</el-button>
     </el-form>
   </div>
 </template>
 
 <script>
+import { userLogin } from 'api/http'
 export default {
   data () {
     return {
@@ -44,9 +45,21 @@ export default {
       }
     },
     // 登录
-    userLogin () {
+    userLoginBtn () {
       this.$router.push({path: '/main'})
     }
+  },
+  mounted () {
+    userLogin({
+      userName: 'admin',
+      userPassword: '123'
+    })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 }
 </script>

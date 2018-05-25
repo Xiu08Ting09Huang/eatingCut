@@ -5,9 +5,13 @@
         <svg-icon icon-class="user" />
         首页
       </li>
-      <li class="nav-item" @click="goGoodsOage">
+      <li class="nav-item" @click="goGoodsPage">
         <svg-icon icon-class="user" />
         展示所有订单
+      </li>
+      <li class="nav-item" @click="goUserListPage">
+        <svg-icon icon-class="user" />
+        业务员
       </li>
     </ul>
   </div>
@@ -24,8 +28,11 @@ export default {
     gotoHomePage () {
       this.$router.push({ path: '/main/home' })
     },
-    goGoodsOage () {
+    goGoodsPage () {
       this.$router.push({ path: '/main/goods' })
+    },
+    goUserListPage () {
+      this.$router.push({ path: '/main/userlist'})
     }
   }
 }
