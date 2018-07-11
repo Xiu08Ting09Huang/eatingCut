@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ComLogin from 'base/login/login'
+import comLogin from '@/base/login/login'
 export default {
   data () {
     return {
@@ -13,7 +13,7 @@ export default {
     }
   },
   components: {
-    ComLogin
+    comLogin
   }
 }
 </script>
